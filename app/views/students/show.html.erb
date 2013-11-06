@@ -20,5 +20,12 @@
   <%= @student.title %>
 </p>
 
+<h2> Courses </h2>
+<ul>
+  <% @student.courses.each do |course| %>
+  <li> <%= course.title %> </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
