@@ -3,12 +3,12 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+# Do not set this db to the same as development or production.
 development:
-  adapter: postgresql
-  database: class_mngmt_dev
-  hostname: 'localhost'
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 staging:
   adapter: postgresql
