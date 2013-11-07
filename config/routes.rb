@@ -14,7 +14,8 @@ ClassMngmt::Application.routes.draw do
 
   get 'hello', to: 'students#my_index'
 
-
+  get 'es', to: 'locales#es'
+  get 'en', to: 'locales#en'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
