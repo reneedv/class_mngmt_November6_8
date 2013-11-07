@@ -5,8 +5,9 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+
     respond_to do |format|
-      format.html
+      format.html {render 'index', layout: 'hola'}
       format.json
       format.xml {render xml: @students.to_xml}
     end
