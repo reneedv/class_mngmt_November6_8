@@ -1,5 +1,7 @@
 ClassMngmt::Application.routes.draw do
 
+  resources :assignments
+
   resources :topics
 
   devise_for :students
@@ -12,7 +14,7 @@ ClassMngmt::Application.routes.draw do
 
   get 'welcome', to: 'welcome#index'
 
-  root to: 'topics#index'
+  root to: 'assignments#index'
   
   resources :students
 
