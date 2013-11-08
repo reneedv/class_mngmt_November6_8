@@ -8,6 +8,6 @@ Scenario: Adding a Topic
   Given I visit "/"
   When I click "New Topic"
     And I fill in the field "title" with the text "My Topic"
-    And I click "Create Topic"
+    And I click "Crear Topic"
   Then I should see "All Topics"
     And I should see "My Topic"

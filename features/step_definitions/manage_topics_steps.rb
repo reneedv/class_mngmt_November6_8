@@ -11,5 +11,5 @@ When(/^I click "(.*?)"$/) do |arg1|
 end
 
 When(/^I fill in the field "(.*?)" with the text "(.*?)"$/) do |arg1, arg2|
-  page.fill_in arg1, with: arg2
+  page.fill_in arg1.capitalize, with: arg2
 end

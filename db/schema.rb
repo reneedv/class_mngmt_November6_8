@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108160644) do
+ActiveRecord::Schema.define(version: 20131108183223) do
 
   create_table "course_registrations", force: true do |t|
     t.integer  "student_id"
@@ -53,5 +53,11 @@ ActiveRecord::Schema.define(version: 20131108160644) do
 
   add_index "students", ["confirmation_token"], name: "index_students_on_confirmation_token", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+
+  create_table "topics", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
