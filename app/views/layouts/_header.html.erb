@@ -2,6 +2,9 @@
   <br/>
 <%= link_to 'es', es_path %>
 <%= link_to 'en', en_path %>
+<% if student_signed_in? %>
+<%= link_to t('devise.sessions.sign_out'), destroy_student_session_path, method: :delete %>
+<% end %>
 <br/>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>

@@ -4,9 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+  
+
+  def after_sign_in_path_for user
+    '/students/new'
+  end
+
 private
   def set_locale
-    locales = request.headers["Accept-Language"].split(';')[0].split(',')
-    I18n.locale = locales.last
+    #locales = request.headers["Accept-Language"].split(';')[0].split(',')
+    #I18n.locale = locales.last
   end
 end

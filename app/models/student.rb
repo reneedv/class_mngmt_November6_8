@@ -1,12 +1,16 @@
 class Student < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # , :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
   #has_many :courses
   #has_many :classes, foreign_key: :student_id, class_name: Course
   has_many :course_registrations
   has_many :courses, through: :course_registrations
 
   validates :full_name, presence: true, format: { with: /\b[A-Z]/ }
-  validates :email, presence: true, format: { with: /\w+@\w+\.\w+/, 
-  message: I18n.t('hi') }
+  #validates :email, presence: true, format: { with: /\w+@\w+\.\w+/, 
+  #message: I18n.t('hi') }
   #validates_presence_of :full_name
 
   before_create :populate_defaults
